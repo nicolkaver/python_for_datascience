@@ -11,7 +11,12 @@ def NULL_not_found(object: any):
             caller_lines = m.group(1)
     finally:
         del frame
-    print(caller_lines)
+    start = caller_lines.find("(")
+    end = caller_lines.find(")")
+    content = caller_lines[start + 1 : end]
 
-
-    # print(type(object))
+    if "\"" in caller_lines:
+        print("Type not Found")
+    else:
+        print(content, ": ", object, type(object))
+    return 1
