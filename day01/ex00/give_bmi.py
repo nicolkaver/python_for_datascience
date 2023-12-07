@@ -13,11 +13,17 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
         print(f"{type(e).__name__} : {e}")
         sys.exit(1)
 
-    result = []
+    # result = []
 
-    for x, y in zip(height, weight):
-        new_bmi = y / (x ** 2)
-        result.append(new_bmi)
+    # for x, y in zip(height, weight):
+    #     new_bmi = y / (x ** 2)
+    #     result.append(new_bmi)
+
+    npHeight = np.array(height)
+    npWidth = np.array(width)
+
+    result = npHeight / (npWidth ** 2)
+
     return result
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
