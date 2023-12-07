@@ -1,5 +1,6 @@
 import sys
 from typing import List
+import numpy as np
 
 def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
     try:
@@ -28,11 +29,13 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         print(f"{type(e).__name__} : {e}")
         sys.exit(1)
     
-    bool_array: List[bool] = []
-    for value in bmi:
-        bool_value = False
-        if value > limit:
-            bool_value = True
-        bool_array.append(bool_value)
+    # bool_array: List[bool] = []
+    # for value in bmi:
+    #     bool_value = False
+    #     if value > limit:
+    #         bool_value = True
+    #     bool_array.append(bool_value)
+
+    result = np.array(bmi)
         
-    return bool_array
+    return result > limit
