@@ -33,12 +33,10 @@ def ft_zoom(path: str) -> Image.Image:
     new_width = width + 200
     new_height = height + 200
     extended_img = Image.new("RGB", (new_width, new_height), color="white")
-    extended_img.paste(contour_pil_image, (100, 100)) # Paste the original image at (100, 100)
+    extended_img.paste(contour_pil_image, (100, 100))
 
     # Draw is for creating the drawing context
     draw = ImageDraw.Draw(extended_img)
-    # font_path = "./arial.ttf"
-    # font = ImageFont.truetype(font_path, 16)
     font = ImageFont.load_default()
 
     for x in range(100, new_width - 100, 50):
