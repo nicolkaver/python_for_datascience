@@ -7,7 +7,7 @@ def main():
     except AssertionError as e:
         print(f"{type(e).__name__} : {e}")
         sys.exit(1)
-    load(sys.argv[1], "France")
+    load(sys.argv[1], "France", "Slovak Republic")
 
 if __name__ == "__main__":
     main()
