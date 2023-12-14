@@ -26,7 +26,7 @@ def load(path: str, country_name: str):
             plt.xlabel('Year')
             plt.ylabel('Life expectancy')
             plt.grid(False)
-            plt.xticks(rotation=45)
+            plt.xticks(range(0, 300, 40), rotation=45)
             plt.tight_layout()
             plt.show()
     except FileNotFoundError:
